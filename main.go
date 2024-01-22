@@ -35,7 +35,7 @@ func ExecuteLambda(ctx context.Context, event events.CognitoEventUserPoolsPostCo
 			userCredentials.UserEmail = att
 			log.Default().Println("User email registered in the SignUp class..")
 		case "sub":
-			userCredentials.UserUIID = att
+			userCredentials.UserUUID = att
 			log.Default().Println("User uiid registered in the SignUp class..")
 		}
 	}

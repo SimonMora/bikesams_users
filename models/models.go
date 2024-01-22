@@ -11,5 +11,5 @@ type SecretRdsJson struct {
 
 type SignUp struct {
 	UserEmail string `json:"UserEmail"`
-	UserUIID  string `json:"UserUIID"`
+	UserUUID  string `json:"UserUIID"`
 }

@@ -5,6 +5,7 @@ import (
 
 	"github.com/SimonMora/bikesams_users/models"
 	"github.com/SimonMora/bikesams_users/util"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 func SignUp(user models.SignUp) error {
@@ -18,7 +19,7 @@ func SignUp(user models.SignUp) error {
 
 	defer Db.Close()
 
-	sqlSentence := " INSERT INTO users (User_UIID, User_Email, User_DateAdd) VALUES ('" + user.UserUIID + "', '" + user.UserEmail + "', '" + util.DateSqlFormat() + "')"
+	sqlSentence := " INSERT INTO users (User_UUID, User_Email, User_DateAdd) VALUES ('" + user.UserUUID + "', '" + user.UserEmail + "', '" + util.DateSqlFormat() + "')"
 	_, err = Db.Exec(sqlSentence)
 
 	if err != nil {

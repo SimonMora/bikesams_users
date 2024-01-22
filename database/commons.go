@@ -8,6 +8,7 @@ import (
 
 	"github.com/SimonMora/bikesams_users/models"
 	"github.com/SimonMora/bikesams_users/secrets"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 var SecretModel models.SecretRdsJson
@@ -44,7 +45,7 @@ func ConnStr(credentials models.SecretRdsJson) string {
 	hostName = credentials.Host
 	dbName = "bikesams"
 	return fmt.Sprintf(
-		"%s:%s@tcp(%s)/%s?allowCleastextPasswords=true",
+		"%s:%s@tcp(%s)/%s?allowCleartextPasswords=true",
 		dbUser, password, hostName, dbName,
 	)
 }
